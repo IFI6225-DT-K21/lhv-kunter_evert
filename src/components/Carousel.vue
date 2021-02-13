@@ -1,5 +1,5 @@
 <template>
-  <carousel :perPage="1">
+  <carousel :paginationPadding="5" :perPage="1">
     <slide>
       <div class="imgWrapper">
         <img
@@ -15,16 +15,46 @@
       </div>
     </slide>
     <slide>
-      <img
-        class="bgImg"
-        src="https://www.lhv.ee/assets/images/headers/parimpank-2021-bg.svg"
-        alt="First slide"
-      />
-      <img
-        class="fgImg"
-        src="https://www.lhv.ee/assets/images/headers/parimpank-2021-fg.svg"
-        alt="First slide"
-      />
+      <div class="imgWrapper">
+        <img
+          class="bgImg"
+          src="https://www.lhv.ee/assets/images/headers/parimpank-2021-bg.svg"
+          alt="First slide"
+        />
+        <img
+          class="fgImg"
+          src="https://www.lhv.ee/assets/images/headers/parimpank-2021-fg.svg"
+          alt="First slide"
+        />
+      </div>
+    </slide>
+    <slide>
+      <div class="imgWrapper">
+        <img
+          class="bgImg"
+          src="https://www.lhv.ee/assets/images/headers/palkyle-bg.svg"
+          alt="First slide"
+        />
+        <img
+          class="fgImg"
+          src="https://www.lhv.ee/assets/images/headers/palkyle-fg.svg"
+          alt="First slide"
+        />
+      </div>
+    </slide>
+    <slide>
+      <div class="imgWrapper">
+        <img
+          class="bgImg"
+          src="https://www.lhv.ee/assets/images/headers/pension-2021-bg.svg"
+          alt="First slide"
+        />
+        <img
+          class="fgImg"
+          src="https://www.lhv.ee/assets/images/headers/pension-2021-fg.svg"
+          alt="First slide"
+        />
+      </div>
     </slide>
   </carousel>
 </template>
@@ -48,29 +78,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.VueCarousel-dot-container {
+  margin-top: 0 !important;
+}
 .imgWrapper {
   height: 500px;
   overflow: hidden;
-  z-index: 1000;
+  position: relative;
+  display: inline-flex;
+
+  width: 100%;
 }
 .bgImg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  //   //   top: -56px;
-  //   height: 600px;
-  //   width: 100vw;
-  //   background-position: center center;
-  //   z-index: -100;
-  z-index: -60;
   height: 500px;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  object-fit: cover;
 }
 .fgImg {
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: -50;
-  height: 600px;
+  position: absolute;
+  height: 550px;
+  min-width: 100%;
 }
 .carousel-indicators li {
   background-color: black;

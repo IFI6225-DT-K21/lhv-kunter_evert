@@ -54,9 +54,7 @@
 export default {
   name: "Header",
   data() {
-    return {
-      selected: "radio1",
-    };
+    return {};
   },
 };
 </script>

@@ -193,6 +193,7 @@ export default {
 
 <style lang="scss" scoped>
 .navWrap {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
   z-index: 101;
   display: flex;
   justify-content: center;
