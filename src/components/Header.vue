@@ -2,13 +2,10 @@
   <div class="mainRow">
     <div id="dataRow">
       <div id="logoColumn">
-        <img
-          class="logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/b/be/Lhv-logo_2.svg"
-        />
+        <img class="logo" src="https://www.lhv.ee/assets/images/lhv-logo.svg" />
       </div>
       <div id="portalsColumn">
-        <a style="font-weight: bold" href="/">PANK</a>
+        <a class="activeLink" href="/">PANK</a>
         <br />
         <a href="/">FINANTSPORTAAL</a>
         <br />
@@ -79,7 +76,7 @@ body {
   position: relative;
   z-index: 1;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 0.5px;
   background: #fff;
   width: 100%;
   text-transform: uppercase;
@@ -241,7 +238,10 @@ body {
   color: black;
 }
 #logoColumn {
-  display: block;
+  height: 50px;
+  justify-items: center;
+  align-items: center;
+  display: flex;
   float: left;
 }
 #portalsColumn {
@@ -251,9 +251,20 @@ body {
   line-height: 18px;
   margin-left: 15px;
 }
+#portalsColumn a:hover {
+  color: gray;
+  text-decoration: none;
+}
+.activeLink {
+  font-weight: bold;
+}
+.activeLink:hover {
+  color: initial !important;
+}
 #buttonsColumn {
   float: right;
   line-height: 60px;
+  margin-bottom: 20px;
   a {
     text-decoration: none;
     color: black;

@@ -1,16 +1,21 @@
 <template>
   <div id="app">
     <Header />
+    <NavbarTop />
+    <CarouselComponent />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
-
+import NavbarTop from "./components/NavbarTop.vue";
+import CarouselComponent from "./components/Carousel.vue";
 export default {
   name: "App",
   components: {
     Header,
+    NavbarTop,
+    CarouselComponent,
   },
 };
 </script>
