@@ -17,7 +17,7 @@
       </div>
       <div id="buttonsColumn">
         <a href="/">AVA KONTO</a>
-        <b-button v-b-toggle.collapse-3 class="m-1">Sisene</b-button>
+        <a v-b-toggle.collapse-3 class="collapseButton">SISENE</a>
 
         <a href="/">EN</a>
         <a href="/">RU</a>
@@ -27,14 +27,17 @@
       <div class="formWrapper">
         <div class="formBlocks">
           <div class="formGroup">
-            <b-form-radio-group
-              id="btn-radios-1"
-              v-model="selected"
-              :options="options"
-              :aria-describedby="ariaDescribedby"
-              name="formButton"
-              buttons
-            ></b-form-radio-group>
+            <b-button-group>
+              <b-button id="radioBtnID" class="radioBtn">ID-kaart</b-button>
+              <b-button id="radioBtnMobile" class="radioBtn"
+                >Mobiil-ID</b-button
+              >
+              <b-button id="radioBtnSmart" class="radioBtn">Smart-ID</b-button>
+              <b-button id="radioBtnPin" class="radioBtn"
+                >PIN-kalkulaator</b-button
+              >
+              <b-button id="radioBtnPass" class="radioBtn">Salasõna</b-button>
+            </b-button-group>
           </div>
           <label for="inputPassword2" class="sr-only">Kasutajanimi</label>
           <input
@@ -56,13 +59,6 @@ export default {
   data() {
     return {
       selected: "radio1",
-      options: [
-        { text: "ID-kaart", value: "radio1" },
-        { text: "Mobiil-ID", value: "radio2" },
-        { text: "Smart-ID", value: "radio3" },
-        { text: "PIN-kalkulaator", value: "radio4" },
-        { text: "Salasõna", value: "radio5" },
-      ],
     };
   },
 };
@@ -78,6 +74,7 @@ body {
   font-weight: 400;
   letter-spacing: 0;
 }
+
 .mainRow {
   position: relative;
   z-index: 1;
@@ -109,12 +106,68 @@ body {
 .formBlocks {
   display: inline-block;
 }
-// .collapseWrapper {
-//   position: relative;
-//   width: 100%;
-//   margin-top: 50px;
-//   text-align: center;
-// }
+.form-group {
+  margin-bottom: 0 !important;
+}
+.radioBtn {
+  padding: 10px 13px;
+  font-weight: 500;
+  font-size: 14px;
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-color: rgba(181, 181, 185, 1);
+}
+#radioBtnID {
+  border-left: 1px solid;
+  border-left-color: rgba(181, 181, 185, 1);
+}
+#radioBtnPass {
+  border-right: 1px solid;
+  border-right-color: rgba(181, 181, 185, 1);
+}
+.radioBtn:hover {
+  border-color: rgba(181, 181, 185, 1);
+}
+.radiobtn:focus {
+  // background: rgba(181, 181, 185, 1) !important;
+  box-shadow: none;
+  border-color: rgba(181, 181, 185, 1);
+  background: transparent !important;
+}
+.radiobtn:active {
+  // background: rgba(181, 181, 185, 1) !important;
+  box-shadow: none;
+  background: transparent !important;
+}
+.collapseButton {
+  text-decoration: none;
+  font-size: 14px !important;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgba(45, 44, 55);
+  color: white !important;
+}
+
+.not-collapsed {
+  font-size: 12px !important;
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  color: black !important;
+}
+.not-collapsed:hover {
+  color: black;
+}
+.not-collapsed:active {
+  border: none;
+}
+
 .emailInput {
   margin-right: 8px;
   margin-left: 12px;
@@ -137,6 +190,9 @@ body {
   font-size: 14px;
   font-weight: 500;
   padding: 5px 16px !important;
+}
+.btn-secondary {
+  color: black !important;
 }
 .formGroup {
   display: inline-block;
@@ -199,6 +255,8 @@ body {
   float: right;
   line-height: 60px;
   a {
+    text-decoration: none;
+    color: black;
     margin-left: 20px;
   }
 }
@@ -209,5 +267,8 @@ a {
 .logo {
   width: 84px;
   height: 100%;
+}
+label {
+  background: white !important;
 }
 </style>
