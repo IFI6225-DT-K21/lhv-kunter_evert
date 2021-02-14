@@ -105,7 +105,7 @@ body {
   margin-bottom: 0 !important;
 }
 .radioBtn {
-  padding: 10px 13px;
+  padding: 6px 13px;
   font-weight: 500;
   font-size: 14px;
   background: transparent;
