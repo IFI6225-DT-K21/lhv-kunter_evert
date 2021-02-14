@@ -231,7 +231,7 @@ nav {
     font-size: 13px;
     border: none;
     line-height: 13px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
   }

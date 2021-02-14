@@ -103,7 +103,6 @@ export default {
 
 <style lang="scss" scoped>
 body {
-  font-family: "Neue Helvetica W06", "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
@@ -149,7 +148,7 @@ body {
 .radioBtn {
   padding: 7px 13px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   background: transparent;
   border-left: none;
   border-right: none;
@@ -197,7 +196,8 @@ body {
 }
 .collapseButton {
   text-decoration: none;
-  font-size: 14px !important;
+  font-weight: bold;
+  font-size: 12px !important;
   cursor: pointer;
   border-radius: 5px;
   border: 1px solid;
