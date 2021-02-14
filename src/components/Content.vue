@@ -212,7 +212,7 @@ strong {
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1100px;
   }
 }
 </style>

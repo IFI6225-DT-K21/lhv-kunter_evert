@@ -4,6 +4,7 @@
     <NavbarTop />
     <CarouselComponent />
     <Content />
+    <Footer />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from "./components/Header.vue";
 import NavbarTop from "./components/NavbarTop.vue";
 import CarouselComponent from "./components/Carousel.vue";
 import Content from "./components/Content.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -20,6 +22,7 @@ export default {
     NavbarTop,
     CarouselComponent,
     Content,
+    Footer,
   },
 };
 </script>
