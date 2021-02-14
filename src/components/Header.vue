@@ -25,15 +25,41 @@
         <div class="formBlocks">
           <div class="formGroup">
             <b-button-group>
-              <b-button id="radioBtnID" class="radioBtn">ID-kaart</b-button>
-              <b-button id="radioBtnMobile" class="radioBtn"
-                >Mobiil-ID</b-button
+              <button
+                @click="loginMethod($event)"
+                id="radioBtnID"
+                class="radioBtn chosen"
               >
-              <b-button id="radioBtnSmart" class="radioBtn">Smart-ID</b-button>
-              <b-button id="radioBtnPin" class="radioBtn"
-                >PIN-kalkulaator</b-button
+                ID-kaart
+              </button>
+              <button
+                @click="loginMethod($event)"
+                id="radioBtnMobile"
+                class="radioBtn"
               >
-              <b-button id="radioBtnPass" class="radioBtn">Salasõna</b-button>
+                Mobiil-ID
+              </button>
+              <button
+                @click="loginMethod($event)"
+                id="radioBtnSmart"
+                class="radioBtn"
+              >
+                Smart-ID
+              </button>
+              <button
+                @click="loginMethod($event)"
+                id="radioBtnPin"
+                class="radioBtn"
+              >
+                PIN-kalkulaator
+              </button>
+              <button
+                @click="loginMethod($event)"
+                id="radioBtnPass"
+                class="radioBtn"
+              >
+                Salasõna
+              </button>
             </b-button-group>
           </div>
           <label for="inputPassword2" class="sr-only">Kasutajanimi</label>
@@ -54,7 +80,21 @@
 export default {
   name: "Header",
   data() {
-    return {};
+    return {
+      currentMethod: "radioBtnID",
+    };
+  },
+  methods: {
+    loginMethod(event) {
+      let target = event.currentTarget.id;
+      this.currentMethod = target;
+    },
+  },
+  watch: {
+    currentMethod: function (next, prev) {
+      document.getElementById(next).classList.add("chosen");
+      document.getElementById(prev).classList.remove("chosen");
+    },
   },
 };
 </script>
@@ -69,7 +109,9 @@ body {
   font-weight: 400;
   letter-spacing: 0;
 }
-
+.chosen {
+  background-color: rgba(181, 181, 185, 1) !important;
+}
 .mainRow {
   position: relative;
   z-index: 1;
@@ -105,34 +147,52 @@ body {
   margin-bottom: 0 !important;
 }
 .radioBtn {
-  padding: 6px 13px;
+  padding: 7px 13px;
   font-weight: 500;
   font-size: 14px;
   background: transparent;
   border-left: none;
   border-right: none;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  box-shadow: none !important;
   border-color: rgba(181, 181, 185, 1);
 }
+.active {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
 #radioBtnID {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   border-left: 1px solid;
   border-left-color: rgba(181, 181, 185, 1);
 }
 #radioBtnPass {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
   border-right: 1px solid;
   border-right-color: rgba(181, 181, 185, 1);
 }
-.radioBtn:hover {
-  border-color: rgba(181, 181, 185, 1);
-}
+// .radioBtn:hover {
+//   border-color: rgba(181, 181, 185, 1);
+//   background: inherit;
+// }
 .radiobtn:focus {
+  box-shadow: none !important;
   // background: rgba(181, 181, 185, 1) !important;
-  box-shadow: none;
   border-color: rgba(181, 181, 185, 1);
   background: transparent !important;
 }
 .radiobtn:active {
   // background: rgba(181, 181, 185, 1) !important;
-  box-shadow: none;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.radiobtn:active:focus {
+  // background: rgba(181, 181, 185, 1) !important;
+  box-shadow: none !important;
   background: transparent !important;
 }
 .collapseButton {
